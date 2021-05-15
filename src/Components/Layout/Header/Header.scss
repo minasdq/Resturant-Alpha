@@ -1,0 +1,85 @@
+#header {
+    background: url("../../../img/bg.jpg") center center/cover no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    
+  }
+#header .overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(34, 34, 37, 0.45);
+}
+
+#header .content {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-top: 0.625px;
+}
+
+#header h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.875rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 1.9rem;
+}
+
+#header h1 {
+  text-align: center;
+  font-family: "Great Vibes", sans-serif;
+  font-size: 6.25rem;
+  font-weight: 500;
+}
+
+#header .btn {
+  border: 1px solid #fff;
+  background-color: transparent;
+  padding: 0.95rem 1.75rem;
+  border-radius: 25px;
+  margin-top: 1.9rem;
+}
+
+#header .btn a {
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+#header .btn:hover {
+  background-color: #fff;
+}
+
+#header .btn:hover a {
+  color: inherit !important;
+}
+
+#header .btn:active {
+  transform: scale(0.99);
+}
+@media (max-width: 576px) {
+  #header h3 {
+    font-size: 1.25rem;
+  }
+  #header .content h1 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 353px) {
+  #header .content h1 {
+    font-size: 3rem;
+  }
+}
