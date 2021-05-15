@@ -1,5 +1,4 @@
-import React, { useRef } from "react"
-import { useInView } from 'react-intersection-observer';
+import React, { useRef } from "react";
 import whitelogo from "../../../img/logo-white.png"
 import blacklogo from "../../../img/logo-black.png"
 import { NavLink, Link } from "react-router-dom"
@@ -27,6 +26,9 @@ const Navbar = (e) => {
     SearchBoxEl.current.classList.remove('active') 
   }
   window.addEventListener('scroll',()=>{
+    if (!navbarEl.current){
+      return
+    }
     if(window.scrollY>navbarEl.current.offsetHeight){
         navbarEl.current.classList.add('active')
     }
