@@ -1,0 +1,41 @@
+#book-form {
+  margin: 7.5rem auto;
+  margin-bottom: 0px !important;
+  .container {
+    width: 50%;
+    margin: auto;
+    .form-container {
+      margin-top: 4rem;
+      padding: 50px 40px 35px;
+      background-color: #fff;
+      box-shadow: 0 10px 30px 5px rgba(17, 21, 23, 0.1);
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  #book-form {
+    .container {
+      width: 65%;
+    }
+  }
+}
+@media (max-width: 991px) {
+  #book-form {
+    .container {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #book-form {
+    .container {
+      width: 90%;
+      .form-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+}

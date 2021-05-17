@@ -1,0 +1,58 @@
+.form-control {
+  input,
+  textarea {
+    height: 60px;
+    padding: 20px 30px;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 100;
+    border: 1px solid #eee;
+    border-radius: 0;
+    width: 100%;
+    margin: 10px;
+    font-family: sans-serif;
+    font-weight: 300;
+    &::placeholder {
+      color: #ccc;
+    }
+    &:focus {
+      outline: 1px solid#1ec0ff;
+    }
+    &:invalid {
+      outline: 1px solid rgb(141, 9, 9);
+    }
+  }
+  textarea {
+    height: 200px !important;
+  }
+}
+@media (max-width: 1199px) {
+  #book-form {
+    .container {
+      width: 65%;
+    }
+  }
+}
+@media (max-width: 991px) {
+  #book-form {
+    .container {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .form {
+    .form-control {
+      input,
+      textarea {
+        margin: 10px 0px;
+        padding: 5px;
+        width: 100%;
+        &::placeholder {
+          font-size: 14.5px;
+        }
+      }
+    }
+  }
+}

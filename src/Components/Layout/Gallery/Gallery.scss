@@ -1,0 +1,40 @@
+#gallery {
+    margin: 7.5rem 0;
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+    .gallery-img {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      img {
+        width: 45%;
+        margin: 0.5rem;
+      }
+    }
+   
+  }
+  
+  @media (max-width: 576px) {   
+    #gallery {
+      .container {
+        width: 99%;
+      }
+    }
+  }
+  @media (max-width: 330px) {
+    #gallery {
+      .container {
+        .gallery-img {
+          img {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+  
