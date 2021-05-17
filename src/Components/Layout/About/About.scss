@@ -6,6 +6,9 @@
   width: 80%;
   margin: auto !important;
 }
+#about .text{
+  width: 50%;
+}
 #about .content {
   display: flex;
   justify-content: center;
@@ -40,6 +43,11 @@
   #about .content .content-img {
     width: 99%;
   }
+  #about {
+      .text {
+        width: 99% !important;
+      }
+}
 }
 @media (max-width: 576px) {
   #about .content img {

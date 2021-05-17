@@ -1,0 +1,49 @@
+#team {
+  padding-top: 3rem;
+  background-color: #fff;
+  height: auto;
+  .container {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .img-team {
+      width: 50%;
+      margin: auto;
+      padding: 3rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+      }
+    }
+    .text {
+      width: 50%;
+      margin: auto;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #team {
+    .container {
+      .text {
+        width: 99% !important;
+      }
+      .img-team {
+        width: 90% !important;
+        margin: auto;
+        img {
+          margin: auto;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}
