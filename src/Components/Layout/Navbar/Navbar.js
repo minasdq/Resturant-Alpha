@@ -1,14 +1,26 @@
-import React, { useRef } from "react";
+import React, { useRef,useEffect,useState } from "react";
 import whitelogo from "../../../img/logo-white.png"
 import blacklogo from "../../../img/logo-black.png"
-import { NavLink, Link } from "react-router-dom"
+import { NavLink, Link ,useHistory} from "react-router-dom"
 import "./Navbar.scss"
 const Navbar = (e) => {
+  const [showNavbar,setShowNavbar]=useState('')
   const barMenuEl = useRef(null)
   const toggleMenuEl = useRef(null)
   const navbarmenuEl = useRef(null)
   const SearchBoxEl = useRef(null)
   const navbarEl = useRef(null)
+  const history = useHistory() 
+  useEffect(()=>{
+    return history.listen((location) => { 
+      if(location.pathname==='/'){
+        setShowNavbar('')
+      }
+      else{
+        setShowNavbar('active')
+      }
+   }) 
+  },[history])
   const openMenu = () => {
     barMenuEl.current.style.display = "none"
     toggleMenuEl.current.style.display = "block"
@@ -26,18 +38,18 @@ const Navbar = (e) => {
     SearchBoxEl.current.classList.remove('active') 
   }
   window.addEventListener('scroll',()=>{
-    if (!navbarEl.current){
+    if (!navbarEl.current && window.location.pathname!=='/'){
       return
     }
     if(window.scrollY>navbarEl.current.offsetHeight){
-        navbarEl.current.classList.add('active')
+      setShowNavbar('active')
     }
     else{
-        navbarEl.current.classList.remove('active')
+      setShowNavbar('')
     }
 })
   return (
-    <div className="navbar" id="navbar" ref={navbarEl}>
+    <div className={`navbar ${showNavbar}`} id="navbar" ref={navbarEl}>
       <div className="search-box" ref={SearchBoxEl}>
         <div className="container">
           <div className="serch-container">
