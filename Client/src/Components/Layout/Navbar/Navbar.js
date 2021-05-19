@@ -3,7 +3,7 @@ import whitelogo from "../../../img/logo-white.png"
 import blacklogo from "../../../img/logo-black.png"
 import { NavLink, Link ,useHistory} from "react-router-dom"
 import "./Navbar.scss"
-const Navbar = (e) => {
+const Navbar = () => {
   const [showNavbar,setShowNavbar]=useState('')
   const barMenuEl = useRef(null)
   const toggleMenuEl = useRef(null)
@@ -12,6 +12,12 @@ const Navbar = (e) => {
   const navbarEl = useRef(null)
   const history = useHistory() 
   useEffect(()=>{
+    if(history.location.pathname==='/'){
+      setShowNavbar('')
+    }
+    else{
+      setShowNavbar('active')
+    }
     return history.listen((location) => { 
       if(location.pathname==='/'){
         setShowNavbar('')
