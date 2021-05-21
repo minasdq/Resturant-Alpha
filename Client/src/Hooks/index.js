@@ -1,4 +1,3 @@
-import React from 'react'
 import * as api from "../Api"
 import { useQuery } from "react-query"
 
