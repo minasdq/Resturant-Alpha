@@ -44,15 +44,18 @@ const Navbar = () => {
     SearchBoxEl.current.classList.remove('active') 
   }
   window.addEventListener('scroll',()=>{
-    if (!navbarEl.current && window.location.pathname!=='/'){
-      return
+    if (navbarEl.current){
+      if (window.location.pathname!=='/'){
+        setShowNavbar('active')
+      }
+      else if(window.scrollY>navbarEl.current.offsetHeight){
+        setShowNavbar('active')
+      }
+      else{
+        setShowNavbar('')
+      }
     }
-    if(window.scrollY>navbarEl.current.offsetHeight){
-      setShowNavbar('active')
-    }
-    else{
-      setShowNavbar('')
-    }
+    
 })
   return (
     <div className={`navbar ${showNavbar}`} id="navbar" ref={navbarEl}>

@@ -1,0 +1,25 @@
+.food__posts{
+    max-width: 1200px;
+    width: 80%;
+    margin: 6rem auto 0;
+    .header{
+        text-align: center;   
+    }
+    .list{
+        margin-top: 3.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 576px) {
+    .food__posts{
+        width: 100%;
+        padding: auto 2rem;
+    }
+  }
+
+
+
+  
