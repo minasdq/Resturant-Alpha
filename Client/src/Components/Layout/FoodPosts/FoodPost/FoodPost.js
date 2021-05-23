@@ -1,11 +1,13 @@
 import React from "react"
-import './FoodPost.scss'
+import { Link } from "react-router-dom"
+import "./FoodPost.scss"
 const FoodPost = ({ post }) => {
-  console.log(post.imgThumb);
   return (
     <div className="food__post">
-      <img src={post.imgThumb} />
-      <h4>{post.title}</h4>
+      <Link to={`/ListFoods/${post.id}`}>
+        <img src={post.imgThumb} alt={post.title} />
+        <h4>{post.title}</h4>
+      </Link>
     </div>
   )
 }

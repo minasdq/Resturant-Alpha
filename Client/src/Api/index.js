@@ -8,8 +8,8 @@ const  getAllFoodPosts= async () => {
   const { data } = await cleint.get("/foodposts")
   return data
 }
-const getFoodPost = async (_, id) => {
-  const { data } = await cleint.get(`/foodposts/${id}`)
+const getFoodPost = async (props) => {
+  const { data } = await cleint.get(`/foodposts/${props.queryKey[1]}`)
   return data
 }
 

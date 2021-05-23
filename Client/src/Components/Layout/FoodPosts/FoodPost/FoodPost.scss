@@ -1,6 +1,7 @@
 .food__post{
     text-align: center;
     margin: auto;
+    padding: 0 1.3rem;
     img{
         width: 200px;
         height: 200px;
@@ -12,10 +13,13 @@
         }
     }
     h4{
-        font-size: .9rem;
+        font-size: .85rem;
         font-family: "Droid Serif", serif !important;
-        margin: .8rem auto 2.5rem;
+        margin: .8rem auto 2.7rem;
         text-align: center;
         color: rgba(0,0,0,.95);
+    }
+    a{
+        text-decoration: none;
     }
 }
