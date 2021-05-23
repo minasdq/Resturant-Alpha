@@ -1,0 +1,103 @@
+.food__details {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #fff;
+  h2.header {
+    padding-top: 5rem;
+    font-size: 1.4rem;
+  }
+  .content {
+    padding: 0 1rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .img__container {
+      width: 70%;
+
+      img {
+        width: 100%;
+        height: 450px;
+        border-radius: 10px;
+      }
+    }
+    .ingredients {
+      border-radius: 4px;
+      height: 450px;
+      width: calc(28% - 1rem);
+      border: 1px solid rgba(88, 87, 87, 0.25);
+      box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+      h3 {
+        color: #1ec0ff;
+        font-family: "Great Vibes", cursive;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0.625rem 0px;
+      }
+      .list__ingredients {
+        list-style: none;
+        padding-left: 10px;
+        span.dot {
+          color: #1ec0ff;
+        }
+        li {
+          padding-top: 0.7rem;
+          font-size: 1rem;
+          font-family: "Montserrat", sans-serif;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+  .recipe {
+    padding: 1rem 1rem 5rem 1rem;
+   p{
+   
+    line-height: 1.6rem;
+    font-size: .95rem;
+    font-family: "Muli", sans-serif;
+    span.title{
+      color: #1ec0ff;
+      font-family: "Great Vibes", cursive;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+   }
+   
+    
+  }
+
+}
+
+@media (max-width: 991px) {
+  .food__details {
+    .img__container {
+      width: 60% !important;
+    }
+    .ingredients {
+      width: calc(40% - 1rem) !important;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .food__details {
+    width: 100%;
+    padding: auto 2rem;
+    .img__container {
+      width: 90% !important;
+      margin: auto;
+    }
+    .ingredients {
+      width: 90% !important;
+      margin: auto;
+      margin-top: 1rem;
+      height: auto !important;
+      padding-bottom: 2rem;
+    }
+    .recipe {
+     width: 90%;
+     margin: auto;
+    }
+  }
+}
