@@ -7,5 +7,5 @@ On this site you can find different **recipes** for foods
  cd Api
  npm start
  cd ../Client
- npm Start
+ npm start
 ```
