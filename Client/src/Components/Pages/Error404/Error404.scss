@@ -1,0 +1,65 @@
+.error404 {
+  display: flex;
+  width: 80%;
+  background-color: #fff;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  padding: 100px 0;
+  .text {
+    width: 50%;
+    margin: auto;
+    h2 {
+      color: #1ec0ff;
+      font-family: "Great Vibes", cursive;
+      font-size: 3.5rem;
+    }
+    p {
+      margin-top: 0.8rem;
+      font-family: "Droid Serif", serif;
+      line-height: 1.5rem;
+      color: rgba(41, 41, 41, 0.9);
+      font-size: 1rem;
+      font-style: italic;
+    }
+    button {
+      margin-top: 1rem;
+      text-decoration: none;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      color: #fff;
+      background-color: #1ec0ff;
+      border: none;
+      border-radius: 25px;
+      padding: 1rem 2rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+    }
+  }
+  .img-container {
+    width: 35%;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .error404 {
+    flex-direction: column !important;
+    width: 90%;
+    .text {
+      width: 90%;
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+    .img-container {
+      order: -1;
+      width: 70%;
+      margin-bottom: 2rem;
+    }
+  }
+}

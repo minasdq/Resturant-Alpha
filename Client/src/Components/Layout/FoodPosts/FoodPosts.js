@@ -4,11 +4,11 @@ import Title from "../../UI/Title/Title"
 import Spinner from "../Spinner/Spinner"
 import "./FoodPosts.scss"
 const FoodPosts = () => {
-  const { data: posts, isLoading } = useAllFoodPosts()
+  const { data: posts, isLoading,isError } = useAllFoodPosts()
   const showPosts = () => {
-    if (isLoading) {
-      // return <Spinner />
-      return <div>isLoading</div>
+    if (isLoading || isError) {
+      return <Spinner />
+     
     } else {
       return posts.map((post) => {
         return <FoodPost post={post} key={post.id} />

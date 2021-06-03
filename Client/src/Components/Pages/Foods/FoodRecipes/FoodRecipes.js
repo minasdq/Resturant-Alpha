@@ -2,6 +2,7 @@ import React from "react"
 import { useParams } from "react-router-dom"
 import FoodDetails from '../../../Layout/FoodDetails/FoodDetails'
 import { useFoodPost } from "../../../../Hooks"
+import Spinner from '../../../Layout/Spinner/Spinner'
 
 
 const FoodRecipes = (props) => {
@@ -9,8 +10,8 @@ const FoodRecipes = (props) => {
   const { data, isLoading, isError } = useFoodPost(history.id)
   const loadData=()=>{
     if (isLoading || isError) {
-      console.log("spinner");
-      return <div></div>
+      
+      return <Spinner />
     }
     else{
       return <FoodDetails food={data}/>

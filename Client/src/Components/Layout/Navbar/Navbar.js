@@ -1,32 +1,30 @@
-import React, { useRef,useEffect,useState } from "react";
+import React, { useRef, useEffect, useState } from "react"
 import whitelogo from "../../../img/logo-white.png"
 import blacklogo from "../../../img/logo-black.png"
-import { NavLink, Link ,useHistory} from "react-router-dom"
+import { NavLink, Link, useHistory } from "react-router-dom"
 import "./Navbar.scss"
 const Navbar = () => {
-  const [showNavbar,setShowNavbar]=useState('')
+  const [showNavbar, setShowNavbar] = useState("")
   const barMenuEl = useRef(null)
   const toggleMenuEl = useRef(null)
   const navbarmenuEl = useRef(null)
   const SearchBoxEl = useRef(null)
   const navbarEl = useRef(null)
-  const history = useHistory() 
-  useEffect(()=>{
-    if(history.location.pathname==='/'){
-      setShowNavbar('')
+  const history = useHistory()
+  useEffect(() => {
+    if (history.location.pathname === "/") {
+      setShowNavbar("")
+    } else {
+      setShowNavbar("active")
     }
-    else{
-      setShowNavbar('active')
-    }
-    return history.listen((location) => { 
-      if(location.pathname==='/'){
-        setShowNavbar('')
+    return history.listen((location) => {
+      if (location.pathname === "/") {
+        setShowNavbar("")
+      } else {
+        setShowNavbar("active")
       }
-      else{
-        setShowNavbar('active')
-      }
-   }) 
-  },[history])
+    })
+  }, [history])
   const openMenu = () => {
     barMenuEl.current.style.display = "none"
     toggleMenuEl.current.style.display = "block"
@@ -37,26 +35,25 @@ const Navbar = () => {
     toggleMenuEl.current.style.display = "none"
     navbarmenuEl.current.classList.remove("open")
   }
-  const showSearchBar=()=>{
-    SearchBoxEl.current.classList.add('active') 
+  const showSearchBar = () => {
+    SearchBoxEl.current.classList.add("active")
   }
-  const closeSearchBox=()=>{
-    SearchBoxEl.current.classList.remove('active') 
+  const closeSearchBox = () => {
+    SearchBoxEl.current.classList.remove("active")
   }
-  window.addEventListener('scroll',()=>{
-    if (navbarEl.current){
-      if (window.location.pathname!=='/'){
-        setShowNavbar('active')
-      }
-      else if(window.scrollY>navbarEl.current.offsetHeight){
-        setShowNavbar('active')
-      }
-      else{
-        setShowNavbar('')
+  window.addEventListener("scroll", () => {
+    if (navbarEl.current) {
+      if (window.location.pathname !== "/") {
+        setShowNavbar("active")
+      } else if (window.scrollY > navbarEl.current.offsetHeight) {
+        setShowNavbar("active")
+      } else {
+        setShowNavbar("")
       }
     }
-    
-})
+  })
+ 
+
   return (
     <div className={`navbar ${showNavbar}`} id="navbar" ref={navbarEl}>
       <div className="search-box" ref={SearchBoxEl}>
@@ -73,7 +70,11 @@ const Navbar = () => {
       <div className="container">
         <div className="toggle-menu">
           <i className="fas fa-bars" ref={barMenuEl} onClick={openMenu}></i>
-          <i className="fas fa-times" ref={toggleMenuEl} onClick={closeMenu}></i>
+          <i
+            className="fas fa-times"
+            ref={toggleMenuEl}
+            onClick={closeMenu}
+          ></i>
         </div>
         <div className="nav-brand">
           <Link to="/" className="white-logo logo">
@@ -88,7 +89,12 @@ const Navbar = () => {
             <nav>
               <ul>
                 <li>
-                  <NavLink exact to="/" activeClassName="active">
+                  <NavLink
+                    exact
+                    to="/"
+                    activeClassName="active"
+                    onClick={closeMenu}
+                  >
                     Home
                   </NavLink>
                 </li>
@@ -97,24 +103,29 @@ const Navbar = () => {
                     exact
                     activeClassName="ListFoods"
                     to="/ListFoods"
-                    id="list-menu1"
+                    onClick={closeMenu}
                   >
                     Menu
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/order">Order</NavLink>
+                  <NavLink to="/order" onClick={closeMenu}>
+                    Order
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="#gallery">Gallery</NavLink>
+                  <NavLink to="/gallery" onClick={closeMenu}>
+                    Gallery
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink exact to="#footer">
+                  <NavLink exact to="/contact" onClick={closeMenu}>
                     Contact
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink exact to="#footer" id="list-menu2">
+                  <NavLink exact to="/contact" 
+                  onClick={closeMenu}>
                     About
                   </NavLink>
                 </li>
@@ -126,8 +137,12 @@ const Navbar = () => {
               <i className="fas fa-shopping-bag"></i>
             </NavLink>
           </div>
-          <div className="search icon" >
-            <i onClick={showSearchBar} className="fas fa-search" id="search"></i>
+          <div className="search icon">
+            <i
+              onClick={showSearchBar}
+              className="fas fa-search"
+              id="search"
+            ></i>
           </div>
         </div>
       </div>

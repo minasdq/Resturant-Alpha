@@ -18,7 +18,7 @@ const FoodDetails = ({ food }) => {
       <Title title={food.title} subTitle="Cook and enjoy" />
       <div className="content">
         <div className="img__container">
-          <img src={food.imgThumb} />
+          <img src={food.imgThumb} alt={food.title}/>
         </div>
         <div className="ingredients">
           <h3>Ingredients</h3>
