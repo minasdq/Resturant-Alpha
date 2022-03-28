@@ -1,7 +1,7 @@
 # Title
 Resturantalpha
 ## description 
-On this site you can find different **recipes** for foods
+On this site you can find different and simple **recipes** for foods
 ## start Project
 ``` bash 
  cd Api
